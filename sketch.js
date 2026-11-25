@@ -9,17 +9,39 @@ let drumloop =
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //kick
 ];
 
+let synthloop = 
+[
+    //probably gon be the fourth octave or smthn
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //c note
+];
+
 let drumRackWidth = 1000;
 let drumRackHeight = 300;
 let fontSize = 15;
-let textDistanceFromTop = 15;
-let remainingWidth = drumRackWidth - 56;
-let remainingHeight = drumRackHeight - fontSize - textDistanceFromTop;
-let drumRectWidth = remainingWidth / drumloop[0].length;
-let drumRectHeight = remainingHeight / drumloop.length;
+let textDistanceFromTopDrums = 15;
+let remainingDrumWidth = drumRackWidth - 56;
+let remainingDrumHeight = drumRackHeight - fontSize - textDistanceFromTopDrums;
+let drumRectWidth = remainingDrumWidth / drumloop[0].length;
+let drumRectHeight = remainingDrumHeight / drumloop.length;
 
 let synthRackWidth = 1000;
 let synthRackHeight = 720 - drumRackHeight;
+let synthDistanceFromTop = textDistanceFromTopDrums + drumRackHeight;
+let remainingSynthWidth = synthRackWidth - 56;
+let remainingSynthHeight = synthRackHeight - fontSize - textDistanceFromTopDrums;
+let synthRectWidth = remainingSynthWidth / synthloop[0].length;
+let synthRectHeight = remainingSynthHeight / synthloop.length;
 
 let BPM = 120;
 let currentNote = 0;
@@ -53,27 +75,28 @@ function drawDrumRack() {
     fill(0, 0, 0);
     textAlign(CENTER);
     textSize(fontSize);
-    text("Drum Rack", drumRackWidth / 2, textDistanceFromTop);
+    text("Drum Rack", drumRackWidth / 2, textDistanceFromTopDrums);
     fill(30);
-    line(0, fontSize + textDistanceFromTop, drumRackWidth, fontSize + textDistanceFromTop);
+    line(0, fontSize + textDistanceFromTopDrums, drumRackWidth, fontSize + textDistanceFromTopDrums);
     
     //56 is space for instrument names
-    line(56, fontSize + textDistanceFromTop, 56, fontSize + textDistanceFromTop + remainingHeight);
+    line(56, fontSize + textDistanceFromTopDrums, 56, fontSize + textDistanceFromTopDrums + remainingDrumHeight);
 
     stroke(0, 0, 0);
     //start at 1 cause the line at 0 already filled
     for(let r = 1; r < drumloop.length; r++) {
-        line(0, fontSize + textDistanceFromTop + (remainingHeight / drumloop.length) * r, 56 + remainingWidth, fontSize + textDistanceFromTop + (remainingHeight / 4) * r);
+        line(0, fontSize + textDistanceFromTopDrums + (remainingDrumHeight / drumloop.length) * r, 56 + remainingDrumWidth, fontSize + textDistanceFromTopDrums + (remainingDrumHeight / 4) * r);
     }
     for(let c = 0; c < drumloop[0].length; c++) {
         if(c == currentNote) {
             stroke(0, 255, 255);
             strokeWeight(2);
-            line(56 + ((remainingWidth / drumloop[0].length) * c), fontSize + textDistanceFromTop, 56 + ((remainingWidth / drumloop[0].length) * c), fontSize + textDistanceFromTop + remainingHeight);
+            line(56 + ((remainingDrumWidth / drumloop[0].length) * ((c + 31) % 32)), fontSize + textDistanceFromTopDrums, 56 + ((remainingDrumWidth / drumloop[0].length) * ((c + 31) % 32)), fontSize + textDistanceFromTopDrums + remainingDrumHeight);
             stroke(0, 0, 0);
             strokeWeight(1);
+            line(56 + ((remainingDrumWidth / drumloop[0].length) * c), fontSize + textDistanceFromTopDrums, 56 + ((remainingDrumWidth / drumloop[0].length) * c), fontSize + textDistanceFromTopDrums + remainingDrumHeight);
         } else {
-            line(56 + ((remainingWidth / drumloop[0].length) * c), fontSize + textDistanceFromTop, 56 + ((remainingWidth / drumloop[0].length) * c), fontSize + textDistanceFromTop + remainingHeight);
+            line(56 + ((remainingDrumWidth / drumloop[0].length) * c), fontSize + textDistanceFromTopDrums, 56 + ((remainingDrumWidth / drumloop[0].length) * c), fontSize + textDistanceFromTopDrums + remainingDrumHeight);
         }
     }
 
@@ -82,31 +105,65 @@ function drawDrumRack() {
     for(let r = 0; r < drumloop.length; r++) {
         for(let c = 0; c < drumloop[0].length; c++) {
             if(drumloop[r][c] == 1) {
-                rect(57 + drumRectWidth * c, fontSize + textDistanceFromTop + drumRectHeight * r, drumRectWidth, drumRectHeight);
+                rect(57 + drumRectWidth * c, fontSize + textDistanceFromTopDrums + drumRectHeight * r, drumRectWidth, drumRectHeight);
             }
         }
     }    
 }
 
 function drawSynthRack() {
-    fill(100);
+    fill(20, 90, 170);
     rect(0, drumRackHeight, synthRackWidth, synthRackHeight);
     fill(0, 0, 0);
     textAlign(CENTER);
     textSize(fontSize);
-    text("Synth Rack", drumRackWidth / 2, textDistanceFromTop + drumRackHeight);
+    text("Synth Rack", drumRackWidth / 2, synthDistanceFromTop);
     fill(30);
-    line(0, fontSize + textDistanceFromTop + drumRackHeight, drumRackWidth, fontSize + textDistanceFromTop + drumRackHeight);
+    line(0, fontSize + synthDistanceFromTop, drumRackWidth, fontSize + synthDistanceFromTop);
 
-    
+    //HERE
+    //56 is space for note names
+    line(56, fontSize + synthDistanceFromTop, 56, fontSize + synthDistanceFromTop + synthRackHeight);
+
+    stroke(0, 0, 0);
+    //start at 1 cause the line at 0 already filled
+    for(let r = 1; r < synthloop.length; r++) {
+        line(0, fontSize + synthDistanceFromTop + (remainingSynthHeight / synthloop.length) * r, 56 + remainingSynthWidth, fontSize + synthDistanceFromTop + (remainingSynthHeight / synthloop.length) * r);
+    }
+    for(let c = 0; c < synthloop[0].length; c++) {
+        if(c == currentNote) {
+            stroke(0, 255, 255);
+            strokeWeight(2);
+            line(56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop, 56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop + remainingSynthHeight);
+            stroke(0, 0, 0);
+            strokeWeight(1);
+            //line(56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop, 56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop + remainingSynthHeight);
+        } else {
+            line(56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop, 56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop + remainingSynthHeight);
+        }
+    }
+
+    //fill in filled drum areas
+    fill(255, 0, 0);
+    for(let r = 0; r < synthloop.length; r++) {
+        for(let c = 0; c < synthloop[0].length; c++) {
+            if(synthloop[r][c] == 1) {
+                rect(57 + synthRectWidth * c, fontSize + synthDistanceFromTop + synthRectHeight * r, synthRectWidth, synthRectHeight);
+            }
+        }
+    }    
 }
 
 function mouseClicked(event) {
-    if(mouseX > 56 && mouseX < drumRackWidth && mouseY > fontSize + textDistanceFromTop && mouseY < drumRackHeight) {
+    if(mouseX > 56 && mouseX < drumRackWidth && mouseY > fontSize + textDistanceFromTopDrums && mouseY < drumRackHeight) {
         let col = floor((mouseX - 56) / drumRectWidth);
 
-        let row = floor((mouseY - fontSize - textDistanceFromTop) / drumRectHeight);
+        let row = floor((mouseY - fontSize - textDistanceFromTopDrums) / drumRectHeight);
         drumloop[row][col] = 1 - drumloop[row][col];
+    } else if(mouseX > 56 && mouseX < synthRackWidth && mouseY > fontSize + synthDistanceFromTop && mouseY < fontSize + synthDistanceFromTop + remainingSynthHeight) {
+        let col = floor((mouseX - 56) / synthRectWidth);
+        let row = floor((mouseY - fontSize - synthDistanceFromTop) / synthRectHeight);
+        synthloop[row][col] = 1 - synthloop[row][col];
     }
 }
 
