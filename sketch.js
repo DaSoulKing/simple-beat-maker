@@ -9,7 +9,7 @@ let drumloop =
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //kick
 ];
 
-let synthloop = 
+let synthloop1 = 
 [
     //probably gon be the fourth octave or smthn
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -26,6 +26,43 @@ let synthloop =
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //c note
 ];
 
+let synthloop2 = 
+[
+    //probably gon be the fourth octave or smthn
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //c note
+];
+
+let synthloop3 = 
+[
+    //probably gon be the fourth octave or smthn
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //c note
+];
+
+let drumNames = ["Open Hat", "Hi-Hat", "Snare", "Kick"];
+let noteNames = ["B", "A#", "A", "G#", "G", "F#", "F", "E", "D#", "D", "C#", "C"];
+
 let drumRackWidth = 1000;
 let drumRackHeight = 300;
 let fontSize = 15;
@@ -40,22 +77,31 @@ let synthRackHeight = 720 - drumRackHeight;
 let synthDistanceFromTop = textDistanceFromTopDrums + drumRackHeight;
 let remainingSynthWidth = synthRackWidth - 56;
 let remainingSynthHeight = synthRackHeight - fontSize - textDistanceFromTopDrums;
-let synthRectWidth = remainingSynthWidth / synthloop[0].length;
-let synthRectHeight = remainingSynthHeight / synthloop.length;
+let synthRectWidth = remainingSynthWidth / synthloop1[0].length;
+let synthRectHeight = remainingSynthHeight / synthloop1.length;
 
 let BPM = 120;
 let currentNote = 0;
 let lastTime = 0;
 let playingOpenHat = false;
 
+let oscillators = [];
+let currentOscillator = 1;
 let osc;
 let glide = .1;
-let synthPlaying = false;
+let synthOnePlaying = false;
+let synthTwoPlaying = false;
+let synthThreePlaying = false;
 
 let openhat;
 let hihat;
 let snare;
 let kick;
+
+//user input stuff
+let BPMField;
+let waveSelect;
+let synthSelection; //1 is middle, 2 is left, 3 is right
 
 async function setup() {
     createCanvas(1280, 720);
@@ -65,14 +111,44 @@ async function setup() {
     snare = await loadSound('assets/drums/snare.wav');
     kick = await loadSound('assets/drums/kick.wav');
 
-    osc = new p5.Oscillator(440, 'sawtooth');
-    osc.amp(.2);
+    oscillators.push(new p5.Oscillator(440, 'sawtooth'), new p5.Oscillator(440, 'sawtooth'), new p5.Oscillator(440, 'sawtooth'));
+    //osc = new p5.Oscillator(440, 'sawtooth');
+    for(let i = 0; i < oscillators.length; i++) {
+        oscillators[i].amp(.2);
+    }
+    //osc.amp(.2);
+
+    BPMField = createInput('120', 'number');
+    BPMField.attribute('placeholder', 'BPM number')
+    BPMField.size(100, 20);
+    BPMField.position(drumRackWidth + (1280 - drumRackWidth) - 60, 100);
+
+    waveSelect = createSelect();
+    waveSelect.position(drumRackWidth + (1280 - drumRackWidth) - 60, 150);
+    waveSelect.option('sine');
+    waveSelect.option('sawtooth');
+    waveSelect.option('square');
+    waveSelect.option('triangle');
+
+    waveSelect.selected('sawtooth');
+
+    synthSelection = createSelect();
+    synthSelection.position(drumRackWidth + (1280 - drumRackWidth) - 60, 180);
+    synthSelection.option('1');
+    synthSelection.option('2');
+    synthSelection.option('3');
+
+    synthSelection.selected('1');
 }
 
 function draw() {
     background(220);
+    text("Osc 1 bass, Osc 2 mids, Osc 3 highs", drumRackWidth + (1280 - drumRackWidth) - 140, 400);
+    currentOscillator = Number(synthSelection.value()) - 1;
+    oscillators[currentOscillator].setType(waveSelect.selected());
     moveRackOnBPM();
     drawDrumRack();
+    BPM = Number(BPMField.value());
     drawSynthRack();
 }
 
@@ -92,8 +168,15 @@ function drawDrumRack() {
     stroke(0, 0, 0);
     //start at 1 cause the line at 0 already filled
     for(let r = 1; r < drumloop.length; r++) {
-        line(0, fontSize + textDistanceFromTopDrums + (remainingDrumHeight / drumloop.length) * r, 56 + remainingDrumWidth, fontSize + textDistanceFromTopDrums + (remainingDrumHeight / 4) * r);
+        line(0, fontSize + textDistanceFromTopDrums + (remainingDrumHeight / drumloop.length) * r, 56 + remainingDrumWidth, fontSize + textDistanceFromTopDrums + (remainingDrumHeight / drumloop.length) * r);
     }
+
+    textAlign(CENTER, CENTER);
+    textSize(12);
+    for(let r = 0; r < drumNames.length; r++) {
+        text(drumNames[r], 28, fontSize + textDistanceFromTopDrums + drumRectHeight * r + drumRectHeight / 2);
+    }
+
     for(let c = 0; c < drumloop[0].length; c++) {
         if(c == currentNote) {
             stroke(0, 255, 255);
@@ -134,31 +217,56 @@ function drawSynthRack() {
 
     stroke(0, 0, 0);
     //start at 1 cause the line at 0 already filled
-    for(let r = 1; r < synthloop.length; r++) {
-        line(0, fontSize + synthDistanceFromTop + (remainingSynthHeight / synthloop.length) * r, 56 + remainingSynthWidth, fontSize + synthDistanceFromTop + (remainingSynthHeight / synthloop.length) * r);
+    for(let r = 1; r < synthloop1.length; r++) {
+        line(0, fontSize + synthDistanceFromTop + (remainingSynthHeight / synthloop1.length) * r, 56 + remainingSynthWidth, fontSize + synthDistanceFromTop + (remainingSynthHeight / synthloop1.length) * r);
     }
-    for(let c = 0; c < synthloop[0].length; c++) {
+
+    textAlign(CENTER, CENTER);
+    textSize(12);
+    for(let r = 0; r < noteNames.length; r++) {
+        text(noteNames[r], 28, fontSize + synthDistanceFromTop + synthRectHeight * r + synthRectHeight / 2);
+    }
+
+    for(let c = 0; c < synthloop1[0].length; c++) {
         if(c == currentNote) {
             stroke(0, 255, 255);
             strokeWeight(2);
-            line(56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop, 56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop + remainingSynthHeight);
+            line(56 + ((remainingSynthWidth / synthloop1[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop, 56 + ((remainingSynthWidth / synthloop1[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop + remainingSynthHeight);
             stroke(0, 0, 0);
             strokeWeight(1);
             //line(56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop, 56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop + remainingSynthHeight);
         } else {
-            line(56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop, 56 + ((remainingSynthWidth / synthloop[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop + remainingSynthHeight);
+            line(56 + ((remainingSynthWidth / synthloop1[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop, 56 + ((remainingSynthWidth / synthloop1[0].length) * ((c + 31) % 32)), fontSize + synthDistanceFromTop + remainingSynthHeight);
         }
     }
 
     //fill in filled drum areas
     fill(255, 0, 0);
-    for(let r = 0; r < synthloop.length; r++) {
-        for(let c = 0; c < synthloop[0].length; c++) {
-            if(synthloop[r][c] == 1) {
-                rect(57 + synthRectWidth * c, fontSize + synthDistanceFromTop + synthRectHeight * r, synthRectWidth, synthRectHeight);
+    if(currentOscillator == 0) {
+        for(let r = 0; r < synthloop1.length; r++) {
+            for(let c = 0; c < synthloop1[0].length; c++) {
+                if(synthloop1[r][c] == 1) {
+                    rect(57 + synthRectWidth * c, fontSize + synthDistanceFromTop + synthRectHeight * r, synthRectWidth, synthRectHeight);
+                }
             }
-        }
-    }    
+        } 
+    } else if(currentOscillator == 1) {
+        for(let r = 0; r < synthloop2.length; r++) {
+            for(let c = 0; c < synthloop2[0].length; c++) {
+                if(synthloop2[r][c] == 1) {
+                    rect(57 + synthRectWidth * c, fontSize + synthDistanceFromTop + synthRectHeight * r, synthRectWidth, synthRectHeight);
+                }
+            }
+        } 
+    } else if(currentOscillator == 2) {
+        for(let r = 0; r < synthloop3.length; r++) {
+            for(let c = 0; c < synthloop3[0].length; c++) {
+                if(synthloop3[r][c] == 1) {
+                    rect(57 + synthRectWidth * c, fontSize + synthDistanceFromTop + synthRectHeight * r, synthRectWidth, synthRectHeight);
+                }
+            }
+        } 
+    }
 }
 
 function mouseClicked(event) {
@@ -170,7 +278,13 @@ function mouseClicked(event) {
     } else if(mouseX > 56 && mouseX < synthRackWidth && mouseY > fontSize + synthDistanceFromTop && mouseY < fontSize + synthDistanceFromTop + remainingSynthHeight) {
         let col = floor((mouseX - 56) / synthRectWidth);
         let row = floor((mouseY - fontSize - synthDistanceFromTop) / synthRectHeight);
-        synthloop[row][col] = 1 - synthloop[row][col];
+        if(currentOscillator == 0) {
+            synthloop1[row][col] = 1 - synthloop1[row][col];
+        } else if (currentOscillator == 1) {
+            synthloop2[row][col] = 1 - synthloop2[row][col];
+        } else {
+            synthloop3[row][col] = 1 - synthloop3[row][col];
+        }
     }
 }
 
@@ -181,9 +295,17 @@ function moveRackOnBPM() {
         currentNote = (currentNote + 1) % drumloop[0].length;
         playDrum();
         //drum and synth have same length in project
-        if(synthPlaying == true) {
-            osc.stop();
-            synthPlaying = false;
+        if(synthOnePlaying == true) {
+            oscillators[0].stop();
+            synthOnePlaying = false;
+        }
+        if(synthTwoPlaying == true) {
+            oscillators[1].stop();
+            synthTwoPlaying = false;
+        }
+        if(synthThreePlaying == true) {
+            oscillators[2].stop();
+            synthThreePlaying = false;
         }
         playSynth();
     }
@@ -213,13 +335,33 @@ function playDrum() {
 
 function playSynth() {
     let col = currentNote;
-    for(let r = 0; r < synthloop.length; r++) {
-        if(synthloop[r][col] == 1) {
-            osc.freq(midiToFreq(72 - Math.round(r * 1.1)), glide);
-            if(synthPlaying == false) {
-                osc.start();
-                synthPlaying = true;
+    for(let r = 0; r < synthloop1.length; r++) {
+        if(synthloop1[r][col] == 1) {
+            oscillators[0].freq(midiToFreq(47 - r), glide);
+            if(synthOnePlaying == false) {
+                oscillators[0].start();
             }
+            synthOnePlaying = true;
+        }
+    }
+
+    for(let r = 0; r < synthloop2.length; r++) {
+        if(synthloop2[r][col] == 1) {
+            oscillators[1].freq(midiToFreq(71 - r), glide);
+            if(synthTwoPlaying == false) {
+                oscillators[1].start();
+            }
+            synthTwoPlaying = true;
+        }
+    }
+
+    for(let r = 0; r < synthloop3.length; r++) {
+        if(synthloop3[r][col] == 1) {
+            oscillators[2].freq(midiToFreq(95 - r), glide);
+            if(synthThreePlaying == false) {
+                oscillators[2].start();
+            }
+            synthThreePlaying = true;
         }
     }
 }
