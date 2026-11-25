@@ -48,6 +48,10 @@ let currentNote = 0;
 let lastTime = 0;
 let playingOpenHat = false;
 
+let osc;
+let glide = .1;
+let synthPlaying = false;
+
 let openhat;
 let hihat;
 let snare;
@@ -60,6 +64,9 @@ async function setup() {
     hihat = await loadSound('assets/drums/hihat.wav');
     snare = await loadSound('assets/drums/snare.wav');
     kick = await loadSound('assets/drums/kick.wav');
+
+    osc = new p5.Oscillator(440, 'sawtooth');
+    osc.amp(.2);
 }
 
 function draw() {
@@ -173,6 +180,12 @@ function moveRackOnBPM() {
         lastTime = millis();
         currentNote = (currentNote + 1) % drumloop[0].length;
         playDrum();
+        //drum and synth have same length in project
+        if(synthPlaying == true) {
+            osc.stop();
+            synthPlaying = false;
+        }
+        playSynth();
     }
 }
 
@@ -196,6 +209,24 @@ function playDrum() {
             }
         }
     }
+}
+
+function playSynth() {
+    let col = currentNote;
+    for(let r = 0; r < synthloop.length; r++) {
+        if(synthloop[r][col] == 1) {
+            osc.freq(midiToFreq(72 - Math.round(r * 1.1)), glide);
+            if(synthPlaying == false) {
+                osc.start();
+                synthPlaying = true;
+            }
+        }
+    }
+}
+
+//Found the equation online and just translated to code
+function midiToFreq(note) {
+  return 440 * Math.pow(2, (note - 69) / 12); //C4 is 60, C#/Db4 is 61
 }
 
 //just testing the audios
